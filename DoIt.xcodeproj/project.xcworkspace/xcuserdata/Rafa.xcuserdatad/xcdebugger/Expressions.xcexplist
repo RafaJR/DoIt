@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "static GlobalFunctions.getCellBackgroundColor(UIColor) -&gt; UIColor:GlobalFunctions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Constants.transparentOrangeColor.CGColor">
+            </PersistentString>
+            <PersistentString
+               value = "inputColor.CGColor">
+            </PersistentString>
+            <PersistentString
+               value = "Constants.whiteColor.CGColor">
+            </PersistentString>
+            <PersistentString
+               value = "CGColorEqualToColor(inputColor.CGColor, Constants.whiteColor.CGColor)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

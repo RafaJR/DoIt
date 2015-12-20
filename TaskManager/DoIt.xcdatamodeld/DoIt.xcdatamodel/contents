@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="Property" representedClassName="DoIt.Property" syncable="YES">
+        <attribute name="bonus" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="property_description" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Score" representedClassName="DoIt.Score" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="score_day" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName="DoIt.State" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state_description" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Task" representedClassName="DoIt.Task" syncable="YES">
+        <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finish_stimated_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="init_stimated_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="short_description" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="properties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Property" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Property" positionX="-1278" positionY="-453" width="128" height="90"/>
+        <element name="Score" positionX="-1838" positionY="-342" width="128" height="75"/>
+        <element name="State" positionX="-1683" positionY="-345" width="128" height="75"/>
+        <element name="Task" positionX="-1836" positionY="-522" width="128" height="135"/>
+    </elements>
+</model>
