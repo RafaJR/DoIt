@@ -46,7 +46,7 @@ class Constants {
     
     // Current screen parameters
     static let screenRect:CGRect = UIScreen.mainScreen().bounds; // The dispositive screen size to determine the view entities location.
-    static let datePickerWidth:CGFloat = 300; // date picker width
+    static let datePickerWidth:CGFloat = Constants.getDatePickerWidth(Constants.screenRect.size.width); // Calculation of the widht of the date picker
     static let datePickerHeight:CGFloat = screenRect.size.height * 0.5; // Calculation of the parameter to the date picker height of the dispositive.
     static let datePickerViewHeight = datePickerHeight * 0.7;
     static let datePickerHorizontalCenter:CGFloat = (screenRect.size.width - Constants.datePickerWidth) * 0.5; // Calculation of the parameter to horizontally center de date picker view in the dispositive screen.
@@ -67,6 +67,17 @@ class Constants {
     static let completedIcon:UIImage = UIImage(named: "Completed32px.png")!; /*<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>*/
     static let delayedIcon:UIImage = UIImage(named: "Delayed32px.png")!;
     static let onGoingOrPendingIcon:UIImage = UIImage(named: "OnGoingOrPending32px.png")!;
+    
+    // Local date-base constants as entity names.
+    static let entityState:String = "State";       // Idenfifier for the 'State' entity.
+    static let entityProperty:String = "Property"; // Idenfifier for the 'Property' entity.
+    static let entityTask:String = "Task";         // Identifier for the 'Task' entity.
+    static let entityScore:String = "Score";       // Identifier for the 'Score' entity.
+    
+    static let entityStatePending = "Pending";
+    static let entityStateOnGoing = "On going";
+    static let entityStateDelayed = "Delayed";
+    static let entityStateDone = "Done";
     
     static func getFormatter(format:String)->NSDateFormatter {
         
@@ -207,6 +218,19 @@ class Constants {
         Constants.endDatePicker = Constants.getGlobalDatePicker();
         Constants.initHourPicker = Constants.getGlobalDatePicker();
         Constants.endHourPicker = Constants.getGlobalDatePicker();
+        
+    }
+    static func getDatePickerWidth(screenWidth:CGFloat)->CGFloat {
+        
+        var reduction:CGFloat = 0.5;
+        
+        if (screenWidth <= 500) {
+            
+            reduction = 0.9;
+            
+        }
+        
+        return screenWidth * reduction;
         
     }
     

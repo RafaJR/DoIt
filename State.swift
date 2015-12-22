@@ -14,4 +14,7 @@ class State: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var state_description: String
     
+    
 }
+
+

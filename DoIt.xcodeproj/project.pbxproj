@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050F22E51C2724A1004AE788 /* LocalDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050F22E41C2724A1004AE788 /* LocalDataAccess.swift */; settings = {ASSET_TAGS = (); }; };
 		05186F121B639BB400AA261C /* backgroundWhite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 05186F111B639BB400AA261C /* backgroundWhite.jpg */; };
 		051BD3951BF29E1600B581B5 /* first32px.png in Resources */ = {isa = PBXBuildFile; fileRef = 051BD3941BF29E1600B581B5 /* first32px.png */; settings = {ASSET_TAGS = (); }; };
 		051E2EAD1B7C833E0007D309 /* Delayed32px.png in Resources */ = {isa = PBXBuildFile; fileRef = 051E2EAA1B7C833E0007D309 /* Delayed32px.png */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050F22E41C2724A1004AE788 /* LocalDataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataAccess.swift; sourceTree = "<group>"; };
 		05186F111B639BB400AA261C /* backgroundWhite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundWhite.jpg; sourceTree = "<group>"; };
 		051BD3941BF29E1600B581B5 /* first32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first32px.png; sourceTree = "<group>"; };
 		051E2EAA1B7C833E0007D309 /* Delayed32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delayed32px.png; sourceTree = "<group>"; };
@@ -92,9 +94,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050F22E31C27240A004AE788 /* dao */ = {
+			isa = PBXGroup;
+			children = (
+				050F22E41C2724A1004AE788 /* LocalDataAccess.swift */,
+			);
+			name = dao;
+			sourceTree = "<group>";
+		};
 		05236BBC1B5D0C98002121C5 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				050F22E31C27240A004AE788 /* dao */,
 				054462611B7DFD780005B2C7 /* Property.swift */,
 				0544625F1B7DF2E50005B2C7 /* State.swift */,
 				0544625D1B7DF2E50005B2C7 /* Score.swift */,
@@ -308,6 +319,7 @@
 				054462601B7DF2E50005B2C7 /* State.swift in Sources */,
 				05E55B581BF0B00F006840A1 /* TimeIntervalView.swift in Sources */,
 				05488DF71B7B37CC0003060E /* TaskTableViewCell.swift in Sources */,
+				050F22E51C2724A1004AE788 /* LocalDataAccess.swift in Sources */,
 				0544625E1B7DF2E50005B2C7 /* Score.swift in Sources */,
 				051E2EB01B7C94520007D309 /* TaskForCellView.swift in Sources */,
 				05236BC71B5D693A002121C5 /* TaskTableViewController.swift in Sources */,

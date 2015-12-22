@@ -22,9 +22,9 @@
         <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Property" positionX="-1278" positionY="-453" width="128" height="90"/>
-        <element name="Score" positionX="-1838" positionY="-342" width="128" height="75"/>
-        <element name="State" positionX="-1683" positionY="-345" width="128" height="75"/>
-        <element name="Task" positionX="-1836" positionY="-522" width="128" height="135"/>
+        <element name="Property" positionX="-1991" positionY="-585" width="128" height="90"/>
+        <element name="Score" positionX="-1827" positionY="-441" width="128" height="75"/>
+        <element name="State" positionX="-1665" positionY="-585" width="128" height="75"/>
+        <element name="Task" positionX="-1827" positionY="-585" width="128" height="135"/>
     </elements>
 </model>

@@ -14,6 +14,12 @@ class TaskTableViewController: UITableViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext;
     var taskList:[TaskForCellView] = [];
     
+    // States of an activity.
+    var statePending:State! = nil;
+    var stateOnGoing:State! = nil;
+    var stateDelayed:State! = nil;
+    var stateDone:State! = nil;
+    
     // New tasks registration form
     @IBOutlet weak var taskDescription: UITextField!
     @IBAction func onDescriptionClick(sender: UITextField) {
@@ -192,9 +198,11 @@ class TaskTableViewController: UITableViewController {
     @IBOutlet weak var isDone: UISwitch!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
-        self.formsInitialization();
+        self.formsInitialization(); // Initializing the form fields.
+        self.initialDataCharge(); // Chargeing the initial data for the activities creation (states and properties).
         self.loadTaskList();
         
     }
@@ -292,6 +300,72 @@ class TaskTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    private func initialDataCharge() {
+        
+        let stateList:[State] = LocalDataAccess.loadStatesData();
+        /*
+        let statePending:State! = nil;
+        let stateOnGoing:State! = nil;
+        let stateDelayed:State! = nil;
+        let stateDone:State! = nil;
+        */
+        
+        let stateListCount:Int = stateList.count;
+        
+        if(!stateList.isEmpty && stateListCount != 0) {
+            
+        
+            for(var i=0; i<stateListCount; i++){
+                
+                let alert1:UIAlertView = UIAlertView(title: "\(stateList[i].name)", message: "\(stateList[i].state_description)", delegate: nil, cancelButtonTitle: "Aceptar");
+                alert1.show();
+                
+                if(stateList[i].name == Constants.entityStateDelayed) {
+                    
+                    self.stateDelayed = stateList[i];
+                    
+                }else if(stateList[i].name == Constants.entityStateDone) {
+                    
+                    self.stateDone = stateList[i];
+                    
+                }else if(stateList[i].name == Constants.entityStateOnGoing) {
+                    
+                    self.stateOnGoing = stateList[i];
+                    
+                }else if(stateList[i].name == Constants.entityStatePending) {
+                    
+                    self.statePending = stateList[i];
+                    
+                }
+            
+                /*let alert:UIAlertView = UIAlertView(title: "\(stateList[i].name)", message: "", delegate: nil, cancelButtonTitle: "\(stateList[i].state_description)");
+                alert.show();*/
+                
+                /*
+                let statePending:State! = nil;
+                let stateOnGoing:State! = nil;
+                let stateDelayed:State! = nil;
+                let stateDone:State! = nil;
+                */
+            
+            
+            }
+        }
+        
+        /*let alert1:UIAlertView = UIAlertView(title: "\(self.stateDelayed.name)", message: "\(self.stateDelayed.state_description)", delegate: nil, cancelButtonTitle: "Aceptar");
+        alert1.show();
+        let alert2:UIAlertView = UIAlertView(title: "\(self.stateDone.name)", message: "\(self.stateDone.state_description)", delegate: nil, cancelButtonTitle: "Aceptar");
+        alert2.show();
+        let alert3:UIAlertView = UIAlertView(title: "\(self.stateOnGoing.name)", message: "\(self.stateOnGoing.state_description)", delegate: nil, cancelButtonTitle: "Aceptar");
+        alert3.show();
+        let alert4:UIAlertView = UIAlertView(title: "\(self.statePending.name)", message: "\(self.statePending.state_description)", delegate: nil, cancelButtonTitle: "Aceptar");
+        alert4.show();*/
+        
+        /*let alert1:UIAlertView = UIAlertView(title: "ein?", message: "comol?", delegate: nil, cancelButtonTitle: "Ah!");
+        alert1.show();*/
+        
+    }
     
     private func formsInitialization() {
         
